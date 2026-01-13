@@ -1,0 +1,7 @@
+{
+  "name": "WealthFlow - Personal Finance & Notes",
+  "description": "A sophisticated personal finance and note-taking application with smart categorization and a clean iOS-inspired aesthetic.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
