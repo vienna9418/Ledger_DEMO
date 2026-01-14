@@ -166,6 +166,9 @@ const EditScreen: React.FC<EditScreenProps> = ({ transaction, onSave, onClose, o
               >
                 <span className="material-symbols-outlined text-[20px]">credit_card</span>
               </button>
+              <button className="text-slate-400 hover:text-primary p-1.5">
+                <span className="material-symbols-outlined text-[20px]">image</span>
+              </button>
               <div className="w-px h-4 bg-slate-200 dark:bg-slate-700 mx-1"></div>
               <button className="text-slate-400 hover:text-primary p-1.5"><span className="material-symbols-outlined text-[20px]">format_bold</span></button>
               <button className="text-slate-400 hover:text-primary p-1.5"><span className="material-symbols-outlined text-[20px]">checklist</span></button>
@@ -288,15 +291,9 @@ const EditScreen: React.FC<EditScreenProps> = ({ transaction, onSave, onClose, o
       </div>
 
       <footer className="px-6 py-6 bg-white/50 dark:bg-background-dark/50 ios-blur mt-auto">
-        <div className="flex items-center justify-between mb-5 px-1">
-          <div className="flex items-center gap-6">
-            <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined text-[26px]">calendar_today</span></button>
-            <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined text-[26px]">image</span></button>
-            <button className="text-slate-400 hover:text-primary transition-colors"><span className="material-symbols-outlined text-[26px]">push_pin</span></button>
-          </div>
+        <div className="flex items-center justify-end mb-5 px-1">
           <span className="text-[12px] text-slate-400 font-bold uppercase">
-            {/* Fix invalid date format options in toLocaleDateString */}
-            {transaction?.date || new Date().toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })}
+            {transaction?.date || new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date())}
           </span>
         </div>
         <button 
